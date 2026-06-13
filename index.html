@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luma Specialty Coffee — Café de especialidad y repostería propia en Teruel</title>
+<meta name="description" content="Luma Specialty Coffee, cafetería de especialidad en Teruel. Café de origen, repostería propia, brunch y leches alternativas en la carretera de Alcañiz. Abierto todos los días.">
+<meta name="theme-color" content="#16273d">
+<meta property="og:title" content="Luma Specialty Coffee — Teruel">
+<meta property="og:description" content="Real Coffee. Café de especialidad, repostería propia y brunch en el corazón de Teruel.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/gmaps-01.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Luma Specialty Coffee",
+  "description": "Cafetería de especialidad en Teruel: café de origen, repostería propia, brunch y leches alternativas.",
+  "image": "img/gmaps-01.jpg",
+  "slogan": "Aquí el café importa",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ctra. de Alcañiz, 39, Local 2",
+    "addressLocality": "Teruel",
+    "addressRegion": "Aragón",
+    "postalCode": "44003",
+    "addressCountry": "ES"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.3497104, "longitude": -1.1092885 },
+  "servesCuisine": ["Café de especialidad", "Repostería", "Brunch"],
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "16:00", "closes": "20:00" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#efe7da;
+    --cream:#f8f2e8;
+    --ink:#16273d;
+    --ink-soft:#4f5b6b;
+    --espresso:#0d1826;
+    --tan:#8a4a32;
+    --caoba:#8a4a32;
+    --gold:#cf9b6e;
+    --line:rgba(22,39,61,.14);
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--ink);color:var(--paper)}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--cream)}
+  ::-webkit-scrollbar-thumb{background:var(--ink);border-radius:6px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .serif{font-family:var(--serif)}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:22px clamp(20px,5vw,56px);transition:.45s ease}
+  nav .brand{display:flex;align-items:center;gap:11px}
+  nav .brand .brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.28);transition:.45s}
+  nav.scrolled{background:rgba(13,24,38,.92);backdrop-filter:blur(14px);padding:12px clamp(20px,5vw,56px);border-bottom:1px solid rgba(255,255,255,.1)}
+  nav.scrolled .brand .brand-logo{width:40px;height:40px;box-shadow:0 3px 12px rgba(0,0,0,.4)}
+  .logo-badge{border-radius:50%;object-fit:cover;background:#fff;display:block}
+  nav .links{display:flex;gap:30px;align-items:center}
+  nav .links a{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#fff;mix-blend-mode:difference;transition:.3s}
+  nav.scrolled .links a{color:rgba(248,242,232,.85);mix-blend-mode:normal}
+  nav .links a:hover{color:var(--tan)!important;mix-blend-mode:normal}
+  nav .nav-cta{border:1px solid currentColor;padding:9px 18px;border-radius:40px}
+  nav.scrolled .nav-cta{border-color:var(--gold);color:#fff!important}
+  nav.scrolled .nav-cta:hover{background:var(--gold);color:var(--espresso)!important}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;mix-blend-mode:difference}
+  .burger span{width:26px;height:2px;background:#fff;transition:.3s}
+  nav.scrolled .burger{mix-blend-mode:normal}
+  nav.scrolled .burger span{background:var(--ink)}
+
+  /* ---------- HERO (vídeo autoplay) ---------- */
+  .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--espresso)}
+  .hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero__overlay{position:absolute;inset:0;z-index:1;
+    background:radial-gradient(120% 95% at 50% 42%,rgba(13,24,38,.34),rgba(13,24,38,.76))}
+  .hero__content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding:0 22px}
+  .hero__content .eyebrow{display:flex;align-items:center;gap:14px;font-size:.74rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:26px}
+  .hero__content .eyebrow::before,.hero__content .eyebrow::after{content:"";width:36px;height:1px;background:rgba(255,255,255,.6)}
+  .hero__content h1{font-family:var(--serif);font-weight:400;line-height:.9;font-size:clamp(4.2rem,18vw,13rem);letter-spacing:-.02em;text-shadow:0 8px 50px rgba(0,0,0,.5)}
+  .hero__content .sub{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,3vw,1.9rem);opacity:.95}
+  .hero__content .lead{max-width:520px;margin:24px auto 34px;font-weight:300;opacity:.85;font-size:clamp(1rem,1.3vw,1.12rem)}
+  .hero__cta{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:46px;font-weight:500;font-size:.9rem;
+    letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:.35s}
+  .hero__cta:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-3px)}
+  .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;font-size:.66rem;letter-spacing:.32em;
+    text-transform:uppercase;color:#fff;opacity:.65;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{position:relative}
+  .pad{padding:clamp(80px,12vh,150px) 0}
+  .alt{background:var(--espresso);color:var(--cream)}
+  .alt .sec-head h2{color:var(--cream)}
+  .alt .sec-head h2 em{color:var(--gold)}
+  .alt .sec-head p{color:rgba(248,242,232,.74)}
+  .alt .sec-head .eyebrow{color:var(--gold)}
+  .sec-head{margin-bottom:54px;max-width:680px}
+  .sec-head .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;display:block;font-weight:600}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-.01em}
+  .sec-head h2 em{font-style:italic;color:var(--caoba)}
+  .sec-head p{margin-top:18px;color:var(--ink-soft);font-weight:300;font-size:1.06rem}
+
+  /* About + stats */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,76px);align-items:center}
+  .about-copy p{color:var(--ink-soft);font-weight:300;margin-bottom:18px;font-size:1.07rem}
+  .about-copy .logo-badge{width:88px;height:88px;margin-bottom:26px;box-shadow:0 10px 30px -12px rgba(20,17,15,.4)}
+  .about-copy .sign{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.2rem;margin-top:24px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 24px;text-align:center}
+  .alt .stat{background:var(--paper)}
+  .stat .num{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3rem);color:var(--ink);line-height:1}
+  .stat .num small{color:var(--tan);font-size:.6em}
+  .stat .lbl{margin-top:10px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* Carta / oferta */
+  .esp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .esp{position:relative;border:1px solid var(--line);border-radius:20px;padding:36px 30px;overflow:hidden;background:var(--cream);transition:.4s}
+  .alt .esp{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.13)}
+  .esp:hover{transform:translateY(-6px);border-color:var(--ink);box-shadow:0 18px 40px -26px rgba(20,17,15,.5)}
+  .alt .esp:hover{border-color:var(--gold);box-shadow:0 18px 40px -26px #000}
+  .esp .ic{width:30px;height:30px;color:var(--ink);margin-bottom:16px}
+  .alt .esp .ic{color:var(--gold)}
+  .esp h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin-bottom:10px}
+  .alt .esp h3{color:var(--cream)}
+  .esp p{color:var(--ink-soft);font-weight:300;font-size:.97rem}
+  .alt .esp p{color:rgba(248,242,232,.74)}
+  .carta-note{margin-top:30px;color:var(--ink-soft);opacity:.85;font-size:.86rem;border-left:2px solid var(--ink);padding-left:16px}
+  .carta-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:52px}
+  .ctab{font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;padding:10px 20px;border-radius:40px;border:1px solid rgba(255,255,255,.22);background:transparent;color:rgba(248,242,232,.85);cursor:pointer;transition:.3s;font-weight:500}
+  .ctab:hover{border-color:var(--gold);color:#fff}
+  .ctab.is-active{background:var(--gold);color:var(--espresso);border-color:var(--gold)}
+  .cpanel{display:none}
+  .cpanel.is-active{display:block;animation:fadeUp .5s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .menu{display:grid;grid-template-columns:1fr 1fr;gap:32px 56px;margin-top:34px}
+  .menu-cat{border-top:1px solid var(--line);padding-top:18px}
+  .menu-cat h3{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin-bottom:12px;display:flex;align-items:baseline;gap:10px}
+  .menu-cat h3 small{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);font-family:var(--sans);font-weight:600}
+  .menu-item{display:flex;align-items:baseline;gap:10px;padding:6px 0;font-weight:300;font-size:.97rem}
+  .menu-item .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .menu-item .dots{flex:1;border-bottom:1px dotted rgba(22,39,61,.28);transform:translateY(-4px)}
+  .menu-item .pr{color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:400}
+  .menu-cat.wide{grid-column:1/-1}
+  .menu-cat.wide .items{columns:2;column-gap:52px}
+  .menu-sub{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tan);font-weight:600;margin:14px 0 4px}
+  .menu-foot{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .menu-pill{border:1px solid var(--line);border-radius:40px;padding:8px 16px;font-size:.84rem;color:var(--ink-soft)}
+  .menu-pill b{color:var(--ink);font-weight:600}
+  @media(max-width:880px){.menu{grid-template-columns:1fr;gap:26px}.menu-cat.wide .items{columns:1}}
+
+  /* Galería editorial */
+  .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .gal figure{overflow:hidden;border-radius:16px;position:relative;background:var(--espresso);aspect-ratio:4/3}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:.8s ease}
+  .gal figure:hover img{transform:scale(1.05)}
+  .gal figcaption{position:absolute;inset:auto 0 0 0;padding:16px 18px;font-family:var(--serif);font-style:italic;font-size:1rem;color:#fff;
+    background:linear-gradient(transparent,rgba(13,24,38,.82))}
+
+  /* Contacto */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px)}
+  .info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .info-row .k{min-width:120px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);padding-top:3px;font-weight:600}
+  .info-row .v{font-weight:300;color:var(--ink)}
+  .info-row .v a:hover{color:var(--tan)}
+  .pending{color:var(--ink-soft);font-style:italic;font-size:.92rem;opacity:.8}
+  .hours{list-style:none;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .hours li{display:flex;justify-content:space-between;padding:14px 22px;font-size:.93rem;font-weight:300}
+  .hours li:nth-child(odd){background:var(--cream)}
+  .alt .hours{border-color:rgba(255,255,255,.16)}
+  .alt .hours li:nth-child(odd){background:rgba(255,255,255,.05)}
+  .alt .hours li.today{background:rgba(207,155,110,.22);color:var(--cream)}
+  .alt .hours li .h{color:rgba(248,242,232,.72)}
+  .alt .info-row{border-bottom-color:rgba(255,255,255,.14)}
+  .alt .info-row .k{color:var(--gold)}
+  .alt .info-row .v{color:var(--cream)}
+  .alt .pending{color:rgba(248,242,232,.6)}
+  .alt .map-link{color:var(--gold)}
+  .alt .menu-cat{border-top-color:rgba(255,255,255,.16)}
+  .alt .menu-cat h3{color:var(--cream)}
+  .alt .menu-cat h3 small{color:var(--gold)}
+  .alt .menu-item{color:rgba(248,242,232,.82)}
+  .alt .menu-item .pr{color:var(--cream)}
+  .alt .menu-item .dots{border-bottom-color:rgba(248,242,232,.3)}
+  .alt .menu-sub{color:var(--gold)}
+  .alt .menu-pill{border-color:rgba(255,255,255,.2);color:rgba(248,242,232,.82)}
+  .alt .menu-pill b{color:var(--cream)}
+  .alt .carta-note{color:rgba(248,242,232,.66);border-left-color:var(--gold)}
+  .hours li.today{background:rgba(20,17,15,.1);color:var(--ink);font-weight:500}
+  .hours li .d{letter-spacing:.04em;text-transform:capitalize}
+  .hours li .h{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .map-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;color:var(--ink);font-size:.92rem;letter-spacing:.02em;font-weight:500}
+  .map-link:hover{text-decoration:underline}
+
+  /* Footer */
+  footer{background:var(--espresso);color:var(--cream);padding:56px 0 42px;text-align:center}
+  footer .logo-badge{width:64px;height:64px;margin:0 auto 14px}
+  footer .fmark{font-family:var(--serif);font-size:1.8rem;font-weight:500;letter-spacing:.02em}
+  footer .ftag{color:rgba(250,247,241,.7);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;margin-top:8px}
+  footer small{opacity:.58;font-size:.78rem;display:block;margin-top:22px;line-height:1.9}
+  .placeholder-note{color:rgba(250,247,241,.8)}
+
+  /* Floating buttons */
+  .map-float{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;align-items:center;gap:10px;
+    background:var(--ink);color:var(--paper);padding:13px 20px;border-radius:46px;font-weight:600;font-size:.9rem;
+    box-shadow:0 12px 30px -8px rgba(20,17,15,.6);transition:.3s}
+  .map-float:hover{transform:translateY(-3px) scale(1.03);background:#000}
+  .status-float{position:fixed;left:22px;bottom:22px;z-index:90;display:flex;align-items:center;gap:9px;
+    background:rgba(250,247,241,.95);backdrop-filter:blur(10px);border:1px solid var(--line);color:var(--ink);
+    padding:11px 17px;border-radius:46px;font-size:.82rem;font-weight:500;box-shadow:0 10px 26px -12px rgba(20,17,15,.5);transition:.3s}
+  .status-float .dot{width:9px;height:9px;border-radius:50%;background:var(--ink-soft);flex:none}
+  .status-float.is-open .dot{background:#3a9d5d;box-shadow:0 0 0 4px rgba(58,157,93,.2)}
+  .status-float.is-closed .dot{background:var(--tan);box-shadow:0 0 0 4px rgba(156,123,92,.25)}
+  .status-float b{font-weight:700}
+  .status-float.is-open b{color:#2f7d4a}
+  @media(max-width:560px){.status-float{font-size:.76rem;padding:10px 14px}.map-float span{display:none}.map-float{padding:14px}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}
+  .reveal[data-d="3"]{transition-delay:.3s}.reveal[data-d="4"]{transition-delay:.4s}
+
+  @media(max-width:880px){
+    nav .links{position:fixed;inset:0 0 0 auto;width:74%;max-width:320px;flex-direction:column;justify-content:center;
+      background:rgba(250,247,241,.98);backdrop-filter:blur(16px);transform:translateX(100%);transition:.4s;gap:26px}
+    nav .links.open{transform:none}
+    nav .links a{color:var(--ink)!important;mix-blend-mode:normal}
+    .burger{display:flex}
+    .about-grid,.contact-grid{grid-template-columns:1fr}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .gal .big{grid-column:span 2;grid-row:span 1}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="brand" aria-label="Luma Specialty Coffee">
+    <img class="brand-logo" src="img/logo-luma.jpg" alt="Logo de Luma Specialty Coffee" width="46" height="46">
+  </a>
+  <div class="links" id="links">
+    <a href="#sobre">La casa</a>
+    <a href="#carta">Carta</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Visítanos</a>
+    <a class="nav-cta" href="https://www.google.com/maps/place/Luma+Specialty+Coffee/@40.3497104,-1.1118688,17z/data=!3m1!4b1!4m6!3m5!1s0xd5e7344ab8146e9:0x45c0d794acc45dbf!8m2!3d40.3497104!4d-1.1092885" target="_blank" rel="noopener">Cómo llegar</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO con vídeo principal en bucle -->
+<header class="hero" id="top">
+  <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg" aria-label="Extracción de un espresso de especialidad en Luma">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <span class="eyebrow">Teruel</span>
+    <h1>Luma</h1>
+    <p class="sub">Real Coffee</p>
+    <p class="lead">Café de especialidad, repostería propia y brunch. Una experiencia cuidada en torno al café, en el centro de Teruel.</p>
+    <a class="hero__cta" href="#carta">Descubre la carta</a>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section class="pad" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <img class="logo-badge" src="img/logo-luma.jpg" alt="Logo circular de Luma Specialty Coffee" width="88" height="88">
+      <div class="sec-head" style="margin-bottom:28px">
+        <span class="eyebrow">La casa</span>
+        <h2>El café, <em>como debe ser</em></h2>
+      </div>
+      <p>Luma nace en 2026 con una idea sencilla: <em>aquí el café importa</em>. Tratamos el café como lo que es, un producto de origen que merece tiempo y oficio. Grano de especialidad, extracción cuidada y una taza pensada para disfrutar sin prisa.</p>
+      <p>Acompañamos cada café con repostería propia, opciones de brunch y leches alternativas —avena, coco, almendra— para que cada visita se sienta a medida. Un rincón luminoso en la carretera de Alcañiz para empezar el día o hacer una pausa.</p>
+      <p class="sign">— Luma Specialty Coffee, Teruel</p>
+    </div>
+    <div class="stats reveal" data-d="1">
+      <div class="stat"><div class="num"><span data-count="2026">0</span></div><div class="lbl">Recién abierto</div></div>
+      <div class="stat"><div class="num"><span data-count="7">0</span><small> días</small></div><div class="lbl">Abierto cada semana</div></div>
+      <div class="stat"><div class="num serif" style="font-size:clamp(1.6rem,4vw,2.1rem)">Origen</div><div class="lbl">Café de especialidad</div></div>
+      <div class="stat"><div class="num serif" style="font-size:clamp(1.6rem,4vw,2.1rem)">Propia</div><div class="lbl">Repostería de la casa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA / OFERTA -->
+<section class="pad alt" id="carta">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Lo que servimos</span>
+      <h2>Empieza por el café. <em>Luego ya vemos.</em></h2>
+      <p>Café de especialidad, repostería propia y brunch. Esta es la carta de Luma, con precios reales.</p>
+    </div>
+    <div class="esp-grid">
+      <div class="esp reveal" data-d="1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <h3>Café de especialidad</h3><p>Espresso, filtrado y bebidas con leche, extraídos al momento a partir de grano de origen seleccionado.</p>
+      </div>
+      <div class="esp reveal" data-d="2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v2a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7Z"/><path d="M7 11V7a2 2 0 0 1 2-2"/><path d="M12 11V6a2 2 0 0 1 2-2"/></svg>
+        <h3>Repostería propia</h3><p>Bizcochos, tartas y dulces elaborados en casa, pensados para acompañar la taza.</p>
+      </div>
+      <div class="esp reveal" data-d="3">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        <h3>Brunch</h3><p>Propuestas de brunch para empezar el día sin prisa, con producto cuidado.</p>
+      </div>
+      <div class="esp reveal" data-d="4">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v3l-2 4v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9l-2-4V2"/><path d="M7 13h10"/></svg>
+        <h3>Leches alternativas</h3><p>Avena, coco y almendra, además de la opción clásica, para personalizar cada bebida.</p>
+      </div>
+    </div>
+    <div class="carta-tabs reveal" role="tablist">
+      <button class="ctab is-active" data-tab="cafe">Cafés</button>
+      <button class="ctab" data-tab="te">Tés y chocolate</button>
+      <button class="ctab" data-tab="dulce">Bollería y postres</button>
+      <button class="ctab" data-tab="salado">Salado &amp; brunch</button>
+      <button class="ctab" data-tab="bebidas">Bebidas</button>
+    </div>
+
+    <!-- CAFÉS -->
+    <div class="cpanel is-active" data-panel="cafe">
+      <div class="menu">
+        <div class="menu-cat">
+          <h3>Cafés calientes</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Espresso</span><span class="dots"></span><span class="pr">1,70 €</span></div>
+            <div class="menu-item"><span class="nm">Espresso doble</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Americano</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Cortado</span><span class="dots"></span><span class="pr">1,90 €</span></div>
+            <div class="menu-item"><span class="nm">Café con leche · M / XL</span><span class="dots"></span><span class="pr">2,20 / 2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Cappuccino · M / XL</span><span class="dots"></span><span class="pr">2,20 / 2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Café mocha · M / XL</span><span class="dots"></span><span class="pr">2,80 / 3,30 €</span></div>
+            <div class="menu-item"><span class="nm">Flat white</span><span class="dots"></span><span class="pr">2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Batch brew</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Cafés con calma <small>10 min</small></h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">V60</span><span class="dots"></span><span class="pr">4,00 €</span></div>
+            <div class="menu-item"><span class="nm">Prensa francesa</span><span class="dots"></span><span class="pr">4,00 €</span></div>
+            <div class="menu-item"><span class="nm">Aeropress</span><span class="dots"></span><span class="pr">4,00 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Cafés fríos</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Iced coffee</span><span class="dots"></span><span class="pr">3,00 €</span></div>
+            <div class="menu-item"><span class="nm">Iced latte</span><span class="dots"></span><span class="pr">3,00 €</span></div>
+            <div class="menu-item"><span class="nm">Cold brew</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Espresso tónica</span><span class="dots"></span><span class="pr">4,00 €</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TÉS Y CHOCOLATE -->
+    <div class="cpanel" data-panel="te">
+      <div class="menu">
+        <div class="menu-cat">
+          <h3>Tés y matcha</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Matcha latte</span><span class="dots"></span><span class="pr">3,00 €</span></div>
+            <div class="menu-item"><span class="nm">Chai latte</span><span class="dots"></span><span class="pr">3,00 €</span></div>
+            <div class="menu-item"><span class="nm">Dirty chai latte</span><span class="dots"></span><span class="pr">4,00 €</span></div>
+            <div class="menu-item"><span class="nm">Golden milk latte</span><span class="dots"></span><span class="pr">3,00 €</span></div>
+            <div class="menu-item"><span class="nm">Té e infusiones</span><span class="dots"></span><span class="pr">2,00 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Chocolate y más</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Chocolate caliente · M / XL</span><span class="dots"></span><span class="pr">2,30 / 2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Matcha ceremonial</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Chai especiado de la casa</span><span class="dots"></span><span class="pr">3,20 €</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOLLERÍA Y POSTRES -->
+    <div class="cpanel" data-panel="dulce">
+      <div class="menu">
+        <div class="menu-cat wide">
+          <h3>Bollería y bakery</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Croissant Viena Sophie</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Croissant París</span><span class="dots"></span><span class="pr">2,00 €</span></div>
+            <div class="menu-item"><span class="nm">Croissant curvo cereales</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Cinnamon roll</span><span class="dots"></span><span class="pr">3,20 €</span></div>
+            <div class="menu-item"><span class="nm">New York roll</span><span class="dots"></span><span class="pr">3,20 €</span></div>
+            <div class="menu-item"><span class="nm">Gofres</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Bizcocho de cacao</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Magdalena sin gluten</span><span class="dots"></span><span class="pr">1,80 €</span></div>
+            <div class="menu-item"><span class="nm">Croissant sin gluten</span><span class="dots"></span><span class="pr">1,80 €</span></div>
+            <div class="menu-item"><span class="nm">Cube cinnamon</span><span class="dots"></span><span class="pr">3,20 €</span></div>
+            <div class="menu-item"><span class="nm">Cube avellana</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Cube Lotus</span><span class="dots"></span><span class="pr">3,80 €</span></div>
+            <div class="menu-item"><span class="nm">Cube pistacho</span><span class="dots"></span><span class="pr">3,80 €</span></div>
+            <div class="menu-item"><span class="nm">Plumcake banana bread</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Plumcake carrot</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Plumcake lemon</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat wide">
+          <h3>Tartas y postres <small>de la casa</small></h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Tarta de queso al horno</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Tarta de queso &amp; chocolate</span><span class="dots"></span><span class="pr">3,80 €</span></div>
+            <div class="menu-item"><span class="nm">Carrot cake</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Brownie de chocolate</span><span class="dots"></span><span class="pr">3,20 €</span></div>
+            <div class="menu-item"><span class="nm">Cookie XL de la casa</span><span class="dots"></span><span class="pr">1,90 €</span></div>
+            <div class="menu-item"><span class="nm">Tarta del día</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALADO & BRUNCH -->
+    <div class="cpanel" data-panel="salado">
+      <div class="menu">
+        <div class="menu-cat">
+          <h3>Bagels</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Salmón, salsa tártara y pepinillo</span><span class="dots"></span><span class="pr">6,00 €</span></div>
+            <div class="menu-item"><span class="nm">Brie, jamón, mermelada y tomate</span><span class="dots"></span><span class="pr">6,00 €</span></div>
+            <div class="menu-item"><span class="nm">Pollo al curry (pan brioche)</span><span class="dots"></span><span class="pr">6,50 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Focaccias</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Mortadela italiana, cottage y pesto</span><span class="dots"></span><span class="pr">6,50 €</span></div>
+            <div class="menu-item"><span class="nm">Pastrami, queso y mostaza</span><span class="dots"></span><span class="pr">8,00 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Tostadas <small>pan campestre</small></h3>
+          <div class="items">
+            <div class="menu-sub">Gourmet</div>
+            <div class="menu-item"><span class="nm">Salmón ahumado, Philadelphia y aguacate</span><span class="dots"></span><span class="pr">7,00 €</span></div>
+            <div class="menu-item"><span class="nm">Jamón serrano, queso curado, miel y nueces</span><span class="dots"></span><span class="pr">6,00 €</span></div>
+            <div class="menu-item"><span class="nm">Cottage, jamón cocido, pesto y pistacho</span><span class="dots"></span><span class="pr">6,00 €</span></div>
+            <div class="menu-item"><span class="nm">Aguacate, cottage, hummus y semillas</span><span class="dots"></span><span class="pr">5,00 €</span></div>
+            <div class="menu-sub">Básicas</div>
+            <div class="menu-item"><span class="nm">Aceite</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Tomate</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Jamón y tomate</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Brunch Luma</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Brunch Luma (café + tosta gourmet + dulce + zumo)</span><span class="dots"></span><span class="pr">12,50 €</span></div>
+            <div class="menu-item"><span class="nm">Brunch dulce (café + gofre + fruta)</span><span class="dots"></span><span class="pr">9,50 €</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div class="cpanel" data-panel="bebidas">
+      <div class="menu">
+        <div class="menu-cat">
+          <h3>Cervezas</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Caña Estrella Galicia</span><span class="dots"></span><span class="pr">1,60 €</span></div>
+            <div class="menu-item"><span class="nm">Caña doble Estrella Galicia</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Jarra Estrella Galicia</span><span class="dots"></span><span class="pr">3,50 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio Mahou</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio Estrella Galicia</span><span class="dots"></span><span class="pr">2,50 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio Tostada 0,0</span><span class="dots"></span><span class="pr">2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio sin gluten</span><span class="dots"></span><span class="pr">2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio Rivera reposada</span><span class="dots"></span><span class="pr">2,80 €</span></div>
+            <div class="menu-item"><span class="nm">Tercio B Lemon Radler</span><span class="dots"></span><span class="pr">2,80 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Refrescos</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Coca-Cola</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Fanta naranja / limón</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Fuze Tea</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Aquarius limón / naranja</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Tónica</span><span class="dots"></span><span class="pr">2,30 €</span></div>
+            <div class="menu-item"><span class="nm">Zumos</span><span class="dots"></span><span class="pr">2,00 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Aguas y vermut</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Agua Cabreiroá 33cl</span><span class="dots"></span><span class="pr">1,60 €</span></div>
+            <div class="menu-item"><span class="nm">Agua con gas 33cl</span><span class="dots"></span><span class="pr">2,20 €</span></div>
+            <div class="menu-item"><span class="nm">Spritz</span><span class="dots"></span><span class="pr">5,50 €</span></div>
+            <div class="menu-item"><span class="nm">Vermut</span><span class="dots"></span><span class="pr">3,80 €</span></div>
+          </div>
+        </div>
+        <div class="menu-cat">
+          <h3>Tapas frías</h3>
+          <div class="items">
+            <div class="menu-item"><span class="nm">Olivas chupadedos</span><span class="dots"></span><span class="pr">1,00 €</span></div>
+            <div class="menu-item"><span class="nm">Gildas</span><span class="dots"></span><span class="pr">2,00 €</span></div>
+            <div class="menu-item"><span class="nm">Patatas fritas con mejillones</span><span class="dots"></span><span class="pr">4,50 €</span></div>
+            <div class="menu-item"><span class="nm">Picadillo de fuet, queso, olivas y pepinillos</span><span class="dots"></span><span class="pr">8,00 €</span></div>
+            <div class="menu-item"><span class="nm">Quesos, frutos secos y picatoste</span><span class="dots"></span><span class="pr">10,00 €</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="carta-note reveal">Leche vegetal o sin lactosa +0,20 €. Tartas, postres y brunch varían según el día. Carta y precios de Google Maps (jun. 2026), sujetos a cambios.</p>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="pad" id="galeria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El oficio</span>
+      <h2>De la molienda <em>a la taza</em></h2>
+      <p>Cada espresso empieza mucho antes de servirse. Así se trabaja el café en Luma.</p>
+    </div>
+    <div class="gal">
+      <figure class="reveal"><img src="img/gmaps-17.jpg" alt="Tarta de queso y bollería con dos cappuccinos con latte art en Luma" loading="lazy"></figure>
+      <figure class="reveal" data-d="1"><img src="img/gmaps-10.jpg" alt="Brunch en Luma: bagels, bollería y café con leche con latte art" loading="lazy"></figure>
+      <figure class="reveal" data-d="2"><img src="img/gmaps-13.jpg" alt="Selección de dulces y cafés de especialidad servidos en Luma" loading="lazy"></figure>
+      <figure class="reveal" data-d="3"><img src="img/gmaps-16.jpg" alt="Café con leche con latte art junto a un dulce de la casa en Luma" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="pad alt" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Visítanos</span>
+      <h2>Dónde y cuándo</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-row"><div class="k">Dirección</div><div class="v">Ctra. de Alcañiz, 39 · Local 2<br>44003 Teruel</div></div>
+        <div class="info-row"><div class="k">Teléfono</div><div class="v"><span class="pending">[Teléfono pendiente de confirmar]</span></div></div>
+        <div class="info-row"><div class="k">Instagram</div><div class="v"><span class="pending">[Perfil pendiente de confirmar]</span></div></div>
+        <div class="info-row"><div class="k">Especialidad</div><div class="v">Café de especialidad · repostería propia · brunch</div></div>
+        <a class="map-link" href="https://www.google.com/maps/place/Luma+Specialty+Coffee/@40.3497104,-1.1118688,17z/data=!3m1!4b1!4m6!3m5!1s0xd5e7344ab8146e9:0x45c0d794acc45dbf!8m2!3d40.3497104!4d-1.1092885" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar en Google Maps →</a>
+      </div>
+      <div class="reveal" data-d="1">
+        <ul class="hours" id="hours">
+          <li data-day="1"><span class="d">Lunes</span><span class="h">Cerrado</span></li>
+          <li data-day="2"><span class="d">Martes</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+          <li data-day="3"><span class="d">Miércoles</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+          <li data-day="4"><span class="d">Jueves</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+          <li data-day="5"><span class="d">Viernes</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+          <li data-day="6"><span class="d">Sábado</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+          <li data-day="0"><span class="d">Domingo</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
+        </ul>
+        <p style="margin-top:16px;color:rgba(248,242,232,.6);font-size:.8rem">Horario de Google Maps (jun. 2026). Te lo confirmamos en el local.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="logo-badge" src="img/logo-luma.jpg" alt="Logo de Luma Specialty Coffee" width="64" height="64">
+    <div class="fmark">Luma</div>
+    <div class="ftag">Real Coffee · Teruel</div>
+    <small>
+      Ctra. de Alcañiz, 39 · Local 2 · 44003 Teruel<br>
+      <span class="placeholder-note">Web de demostración · Vídeo de portada proporcionado por el negocio; fotos e información de Google Maps (jun. 2026). Teléfono, redes sociales, carta, precios y datos legales pendientes de confirmar.</span>
+    </small>
+  </div>
+</footer>
+
+<a class="status-float" id="statusFloat" href="#contacto" aria-live="polite"><span class="dot"></span><span class="txt">Horario</span></a>
+
+<a class="map-float" href="https://www.google.com/maps/place/Luma+Specialty+Coffee/@40.3497104,-1.1118688,17z/data=!3m1!4b1!4m6!3m5!1s0xd5e7344ab8146e9:0x45c0d794acc45dbf!8m2!3d40.3497104!4d-1.1092885" target="_blank" rel="noopener" aria-label="Cómo llegar a Luma">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  <span>Cómo llegar</span>
+</a>
+
+<script>
+  const nav=document.getElementById('nav'),links=document.getElementById('links');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+  document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Carta tabs
+  document.querySelectorAll('.ctab').forEach(t=>t.addEventListener('click',()=>{
+    const id=t.dataset.tab;
+    document.querySelectorAll('.ctab').forEach(x=>x.classList.toggle('is-active',x===t));
+    document.querySelectorAll('.cpanel').forEach(p=>p.classList.toggle('is-active',p.dataset.panel===id));
+  }));
+
+  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){count(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+  function count(el){
+    const target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||'0');
+    let t0=null;const dur=1400;
+    function step(ts){if(!t0)t0=ts;const p=Math.min((ts-t0)/dur,1);
+      const val=(target*(1-Math.pow(1-p,3)));
+      el.textContent=dec?val.toFixed(dec):Math.round(val).toLocaleString('es-ES').replace(/\./g,'');
+      if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+
+  const today=new Date().getDay();
+  const li=document.querySelector('.hours li[data-day="'+today+'"]');
+  if(li)li.classList.add('today');
+
+  const SCHEDULE={
+    0:[["09:00","14:00"],["16:00","20:00"]],1:[],
+    2:[["09:00","14:00"],["16:00","20:00"]],3:[["09:00","14:00"],["16:00","20:00"]],
+    4:[["09:00","14:00"],["16:00","20:00"]],5:[["09:00","14:00"],["16:00","20:00"]],
+    6:[["09:00","14:00"],["16:00","20:00"]]
+  };
+  const DIAS=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+  const toMin=s=>{const[h,m]=s.split(":").map(Number);return h*60+m;};
+  function updateStatus(){
+    const el=document.getElementById('statusFloat');if(!el)return;
+    const now=new Date(),d=now.getDay(),mins=now.getHours()*60+now.getMinutes();
+    let openNow=false,closeAt=null;
+    for(const[a,b]of(SCHEDULE[d]||[])){if(mins>=toMin(a)&&mins<toMin(b)){openNow=true;closeAt=b;break;}}
+    if(openNow){el.className='status-float is-open';el.querySelector('.txt').innerHTML='<b>Abierto</b> · cierra '+closeAt;return;}
+    let next=null;
+    for(const[a]of(SCHEDULE[d]||[])){if(toMin(a)>mins){next={dia:'hoy',hora:a};break;}}
+    if(!next){for(let i=1;i<=7;i++){const nd=(d+i)%7,p=SCHEDULE[nd];if(p&&p.length){next={dia:(i===1?'mañana':DIAS[nd]),hora:p[0][0]};break;}}}
+    el.className='status-float is-closed';
+    el.querySelector('.txt').innerHTML=next?('<b>Cerrado</b> · abre '+(next.dia==='hoy'?'':next.dia+' ')+'a las '+next.hora):'<b>Cerrado</b>';
+  }
+  updateStatus();setInterval(updateStatus,60000);
+</script>
+</body>
+</html>
