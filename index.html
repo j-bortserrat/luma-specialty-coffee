@@ -86,7 +86,7 @@
   nav.scrolled .brand .brand-logo{height:26px}
   .logo-badge{display:block;height:auto;width:auto}
   nav .links{display:flex;gap:30px;align-items:center}
-  nav .links a{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#fff;mix-blend-mode:difference;transition:.3s}
+  nav .links a{font-family:var(--serif);font-size:1.02rem;letter-spacing:.01em;font-weight:500;color:#fff;mix-blend-mode:difference;transition:.3s}
   nav.scrolled .links a{color:rgba(248,242,232,.85);mix-blend-mode:normal}
   nav .links a:hover{color:var(--tan)!important;mix-blend-mode:normal}
   nav .nav-cta{border:1px solid currentColor;padding:9px 18px;border-radius:40px}
@@ -135,6 +135,9 @@
   .about-copy p{color:var(--ink-soft);font-weight:300;margin-bottom:18px;font-size:1.07rem}
   .about-copy .logo-badge{height:52px;width:auto;margin-bottom:24px}
   .about-copy .sign{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.2rem;margin-top:24px}
+  .about-lead{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2.5vw,1.8rem);line-height:1.28;color:var(--ink);margin-bottom:18px}
+  .about-lead em{color:var(--caoba);font-style:italic}
+  .about-copy p.body-first::first-letter{font-family:var(--serif);font-weight:500;font-size:3.3em;line-height:.82;float:left;margin:6px 12px -2px 0;color:var(--caoba)}
   .about-photo{border-radius:18px;overflow:hidden;box-shadow:0 26px 60px -30px rgba(20,17,15,.55)}
   .about-photo img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5}
   .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -380,8 +383,9 @@
         <span class="eyebrow">La casa</span>
         <h2>Aquí el café <em>importa</em></h2>
       </div>
-      <p>Luma nace en 2026 como la <em>primera cafetería de café de especialidad de Teruel</em>. Tratamos el café como lo que es, un producto de origen que merece tiempo y oficio: grano de especialidad, extracción cuidada y una taza pensada para disfrutar sin prisa.</p>
-      <p>Acompañamos cada café con repostería propia, opciones de brunch y leches alternativas —avena, coco, almendra— para que cada visita se sienta a medida. Un rincón luminoso en la carretera de Alcañiz para empezar el día o hacer una pausa.</p>
+      <p class="about-lead">Donde el café se toma <em>con calma</em>.</p>
+      <p class="body-first">Luma nace en 2026 como la <em>primera cafetería de café de especialidad de Teruel</em>. Tratamos el café como lo que es, un producto de origen que merece <em>tiempo y oficio</em>: grano de especialidad, extracción cuidada y una taza pensada para disfrutar sin prisa.</p>
+      <p>Acompañamos cada café con <em>repostería propia</em>, brunch y leches alternativas —avena, coco, almendra— para que cada visita se sienta a medida. Un rincón luminoso en la carretera de Alcañiz para empezar el día o hacer una pausa.</p>
       <p class="sign">— Luma Specialty Coffee, Teruel</p>
     </div>
     <figure class="about-photo reveal" data-d="1">
