@@ -40,7 +40,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* Tipografías oficiales de marca */
+  /* Tipografías oficiales de marca.
+     PENDIENTE/LICENCIA: confirmar con el local (Luma) que dispone de la licencia comercial
+     de uso web de estas fuentes — PP Editorial New y, sobre todo, 00 Hypertext Display
+     (su archivo indica "NonCommercial"). No publicar en producción sin ese permiso. */
   @font-face{font-family:'PP Editorial New';src:url('assets/fonts/PPEditorialNew-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
   @font-face{font-family:'PP Editorial New';src:url('assets/fonts/PPEditorialNew-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
   @font-face{font-family:'Hypertext Display';src:url('assets/fonts/00HypertextDisplayNonCommercial-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
@@ -69,6 +72,10 @@
   img{display:block;max-width:100%}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
   .serif{font-family:var(--serif)}
+  /* Display de marca (00 Hypertext) para etiquetas y cifras */
+  .hero__content .eyebrow,.sec-head .eyebrow{font-family:var(--display);font-weight:700}
+  .stat .num{font-family:var(--display)}
+  .ctab{font-family:var(--display);font-weight:700;letter-spacing:.02em}
 
   /* ---------- NAV ---------- */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
