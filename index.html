@@ -183,6 +183,8 @@
   .gal figure{overflow:hidden;border-radius:16px;position:relative;background:var(--espresso);aspect-ratio:3/4}
   .gal img{width:100%;height:100%;object-fit:cover;transition:.8s ease}
   .gal figure:hover img{transform:scale(1.05)}
+  .gal figure.hide{display:none}
+  .gal-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 30px}
   .gal figcaption{position:absolute;inset:auto 0 0 0;padding:16px 18px;font-family:var(--serif);font-style:italic;font-size:1rem;color:#fff;
     background:linear-gradient(transparent,rgba(13,24,38,.82))}
 
@@ -392,7 +394,7 @@
 
 <section class="view" id="view-cafe">
 <!-- CAFÉ DE ESPECIALIDAD -->
-<section class="pad" id="cafe">
+<section class="pad alt" id="cafe">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">El café</span>
@@ -730,20 +732,46 @@
 
 <section class="view" id="view-galeria">
 <!-- GALERÍA -->
-<section class="pad" id="galeria">
+<section class="pad alt" id="galeria">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">El oficio</span>
-      <h2>De la molienda <em>a la taza</em></h2>
-      <p>Cada espresso empieza mucho antes de servirse. Así se trabaja el café en Luma.</p>
+      <span class="eyebrow">Galería</span>
+      <h2>El local, <em>taza a taza</em></h2>
+      <p>Fotos reales de Luma. Filtra por lo que quieras ver.</p>
+    </div>
+        <div class="gal-tabs reveal" role="tablist">
+      <button class="ctab is-active" data-filter="all">Todo</button>
+      <button class="ctab" data-filter="local">Local</button>
+      <button class="ctab" data-filter="bebidas">Café y bebidas</button>
+      <button class="ctab" data-filter="brunch">Brunch y dulce</button>
     </div>
     <div class="gal">
-      <figure class="reveal"><img src="img/loc-fachada.jpg" alt="Fachada de Luma Specialty Coffee con su rótulo en la carretera de Alcañiz, Teruel" loading="lazy"></figure>
-      <figure class="reveal" data-d="1"><img src="img/loc-ubelatte.jpg" alt="Ube latte morado con corazón de latte art en vaso sobre bandeja de madera en Luma" loading="lazy"></figure>
-      <figure class="reveal" data-d="2"><img src="img/loc-rincon.jpg" alt="Rincón de Luma con sofá Chesterfield bajo el rótulo de neón Luma" loading="lazy"></figure>
-      <figure class="reveal" data-d="1"><img src="img/loc-brunch.jpg" alt="Cinnamon roll, bagel de semillas y matcha latte con corazón en Luma" loading="lazy"></figure>
-      <figure class="reveal" data-d="2"><img src="img/loc-cappuccinos.jpg" alt="Dos cappuccinos con latte art y bagels sobre la carta de Luma" loading="lazy"></figure>
-      <figure class="reveal" data-d="3"><img src="img/loc-flatwhite.jpg" alt="Flat white con corazón de latte art, agua y la carta de Luma vistos desde arriba" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-01.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-02.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-03.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gal-04.jpg" alt="Foto de brunch y repostería de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-05.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-06.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-07.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gal-08.jpg" alt="Foto de brunch y repostería de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-09.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-10.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-11.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-12.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-13.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-14.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-15.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-16.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-17.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gal-18.jpg" alt="Foto de brunch y repostería de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-19.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-20.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-21.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gal-22.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-23.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-24.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-25.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="local"><img src="img/gal-26.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -956,10 +984,17 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   // Carta tabs
-  document.querySelectorAll('.ctab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.ctab[data-tab]').forEach(t=>t.addEventListener('click',()=>{
     const id=t.dataset.tab;
-    document.querySelectorAll('.ctab').forEach(x=>x.classList.toggle('is-active',x===t));
+    document.querySelectorAll('.ctab[data-tab]').forEach(x=>x.classList.toggle('is-active',x===t));
     document.querySelectorAll('.cpanel').forEach(p=>p.classList.toggle('is-active',p.dataset.panel===id));
+  }));
+
+  // Galería: filtro por sección
+  document.querySelectorAll('.ctab[data-filter]').forEach(t=>t.addEventListener('click',()=>{
+    const f=t.dataset.filter;
+    document.querySelectorAll('.ctab[data-filter]').forEach(x=>x.classList.toggle('is-active',x===t));
+    document.querySelectorAll('.gal figure').forEach(fig=>fig.classList.toggle('hide',f!=='all'&&fig.dataset.cat!==f));
   }));
 
   const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){count(e.target);cio.unobserve(e.target);}});},{threshold:.6});
