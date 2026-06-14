@@ -38,8 +38,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* Tipografías oficiales de marca */
+  @font-face{font-family:'PP Editorial New';src:url('assets/fonts/PPEditorialNew-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'PP Editorial New';src:url('assets/fonts/PPEditorialNew-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:'Hypertext Display';src:url('assets/fonts/00HypertextDisplayNonCommercial-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
   :root{
     --paper:#efe7da;
     --cream:#f8f2e8;
@@ -50,8 +54,9 @@
     --caoba:#8a4a32;
     --gold:#cf9b6e;
     --line:rgba(22,39,61,.14);
-    --serif:'Fraunces',Georgia,serif;
+    --serif:'PP Editorial New',Georgia,serif;
     --sans:'Inter',system-ui,sans-serif;
+    --display:'Hypertext Display','PP Editorial New',serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -69,10 +74,10 @@
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
     padding:22px clamp(20px,5vw,56px);transition:.45s ease}
   nav .brand{display:flex;align-items:center;gap:11px}
-  nav .brand .brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.28);transition:.45s}
+  nav .brand .brand-logo{height:30px;width:auto;display:block;transition:.45s}
   nav.scrolled{background:rgba(13,24,38,.92);backdrop-filter:blur(14px);padding:12px clamp(20px,5vw,56px);border-bottom:1px solid rgba(255,255,255,.1)}
-  nav.scrolled .brand .brand-logo{width:40px;height:40px;box-shadow:0 3px 12px rgba(0,0,0,.4)}
-  .logo-badge{border-radius:50%;object-fit:cover;background:#fff;display:block}
+  nav.scrolled .brand .brand-logo{height:26px}
+  .logo-badge{display:block;height:auto;width:auto}
   nav .links{display:flex;gap:30px;align-items:center}
   nav .links a{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#fff;mix-blend-mode:difference;transition:.3s}
   nav.scrolled .links a{color:rgba(248,242,232,.85);mix-blend-mode:normal}
@@ -94,8 +99,8 @@
     text-align:center;color:#fff;padding:0 22px}
   .hero__content .eyebrow{display:flex;align-items:center;gap:14px;font-size:.74rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:26px}
   .hero__content .eyebrow::before,.hero__content .eyebrow::after{content:"";width:36px;height:1px;background:rgba(255,255,255,.6)}
-  .hero__content h1{font-family:var(--serif);font-weight:400;line-height:.9;font-size:clamp(4.2rem,18vw,13rem);letter-spacing:-.02em;text-shadow:0 8px 50px rgba(0,0,0,.5)}
-  .hero__content .sub{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,3vw,1.9rem);opacity:.95}
+  .hero__content h1{margin:0}
+  .hero__logo{width:min(82vw,640px);height:auto;filter:drop-shadow(0 10px 50px rgba(0,0,0,.55))}
   .hero__content .lead{max-width:520px;margin:24px auto 34px;font-weight:300;opacity:.85;font-size:clamp(1rem,1.3vw,1.12rem)}
   .hero__cta{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:46px;font-weight:500;font-size:.9rem;
     letter-spacing:.04em;border:1px solid rgba(255,255,255,.55);color:#fff;transition:.35s}
@@ -121,7 +126,7 @@
   /* About + stats */
   .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,76px);align-items:center}
   .about-copy p{color:var(--ink-soft);font-weight:300;margin-bottom:18px;font-size:1.07rem}
-  .about-copy .logo-badge{width:88px;height:88px;margin-bottom:26px;box-shadow:0 10px 30px -12px rgba(20,17,15,.4)}
+  .about-copy .logo-badge{height:52px;width:auto;margin-bottom:24px}
   .about-copy .sign{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.2rem;margin-top:24px}
   .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .stat{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 24px;text-align:center}
@@ -211,8 +216,7 @@
 
   /* Footer */
   footer{background:var(--espresso);color:var(--cream);padding:56px 0 42px;text-align:center}
-  footer .logo-badge{width:64px;height:64px;margin:0 auto 14px}
-  footer .fmark{font-family:var(--serif);font-size:1.8rem;font-weight:500;letter-spacing:.02em}
+  footer .flogo{height:50px;width:auto;margin:0 auto 14px;display:block}
   footer .ftag{color:rgba(250,247,241,.7);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;margin-top:8px}
   footer .ig-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;color:var(--cream);font-size:.9rem;font-weight:500;opacity:.9;transition:.3s}
   footer .ig-link:hover{color:var(--gold);opacity:1}
@@ -256,7 +260,7 @@
 
 <nav id="nav">
   <a href="#top" class="brand" aria-label="Luma Specialty Coffee">
-    <img class="brand-logo" src="img/logo-luma.jpg" alt="Logo de Luma Specialty Coffee" width="46" height="46">
+    <img class="brand-logo" src="assets/logo-luma-white.png" alt="Luma Specialty Coffee" height="30">
   </a>
   <div class="links" id="links">
     <a href="#sobre">La casa</a>
@@ -276,8 +280,7 @@
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <span class="eyebrow">Teruel</span>
-    <h1>Luma</h1>
-    <p class="sub">Real Coffee</p>
+    <h1><img class="hero__logo" src="assets/logo-luma-white.png" alt="Luma Specialty Coffee — Teruel"></h1>
     <p class="lead">Café de especialidad, repostería propia y brunch. Una experiencia cuidada en torno al café, en el centro de Teruel.</p>
     <a class="hero__cta" href="#carta">Descubre la carta</a>
   </div>
@@ -287,7 +290,7 @@
 <section class="pad" id="sobre">
   <div class="wrap about-grid">
     <div class="about-copy reveal">
-      <img class="logo-badge" src="img/logo-luma.jpg" alt="Logo circular de Luma Specialty Coffee" width="88" height="88">
+      <img class="logo-badge" src="assets/logo-luma-black.png" alt="Luma Specialty Coffee" height="52">
       <div class="sec-head" style="margin-bottom:28px">
         <span class="eyebrow">La casa</span>
         <h2>El café, <em>como debe ser</em></h2>
@@ -584,9 +587,8 @@
 
 <footer>
   <div class="wrap">
-    <img class="logo-badge" src="img/logo-luma.jpg" alt="Logo de Luma Specialty Coffee" width="64" height="64">
-    <div class="fmark">Luma</div>
-    <div class="ftag">Real Coffee · Teruel</div>
+    <img class="flogo" src="assets/logo-luma-white.png" alt="Luma Specialty Coffee">
+    <div class="ftag">Aquí el café importa · Teruel</div>
     <a class="ig-link" href="https://www.instagram.com/cafelumaespecialidad" target="_blank" rel="noopener" aria-label="Instagram de Luma Specialty Coffee">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 3.5A6.3 6.3 0 1 0 18.3 12 6.3 6.3 0 0 0 12 5.7zm0 10.4A4.1 4.1 0 1 1 16.1 12 4.1 4.1 0 0 1 12 16.1zm6.5-10.6a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z"/></svg>
       @cafelumaespecialidad
