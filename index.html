@@ -278,6 +278,53 @@
   .rev .who{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(248,242,232,.6)}
   .rev .who b{color:var(--cream);font-weight:600;font-style:normal}
   .rev-cta{margin-top:42px;text-align:center}
+  /* Mapa incrustado + cómo llegar */
+  .map-embed{width:100%;height:400px;border:0;border-radius:18px;margin-top:44px;display:block;filter:grayscale(.12) contrast(1.02)}
+  .getting-there{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:20px}
+  .gt{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px;background:rgba(255,255,255,.05)}
+  .gt svg{width:24px;height:24px;color:var(--gold);flex:none;margin-top:2px}
+  .gt h4{font-family:var(--sans);font-weight:600;font-size:.95rem;margin-bottom:4px;color:var(--cream)}
+  .gt p{font-weight:300;font-size:.9rem;color:rgba(248,242,232,.78)}
+  /* Cafés a la venta (placeholders pendientes) */
+  .coffee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:16px}
+  .coffee-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--cream);transition:.4s}
+  .coffee-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px -26px rgba(22,39,61,.45)}
+  .coffee-img{aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+  .coffee-img img{width:100%;height:100%;object-fit:contain;padding:12px}
+  .coffee-card .cc-body{padding:18px 20px}
+  .coffee-card h4{font-family:var(--serif);font-weight:500;font-size:1.25rem;margin-bottom:5px}
+  .coffee-card p{font-size:.88rem;color:var(--ink-soft);font-weight:300;margin-bottom:10px}
+  .cc-price{display:inline-block;font-family:var(--display);font-weight:700;color:var(--caoba)}
+  /* Frases destacadas */
+  .pull{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,4.2vw,2.9rem);line-height:1.18;text-align:center;max-width:780px;margin:64px auto;letter-spacing:-.01em}
+  .pull em{font-style:italic;color:var(--tan)}
+  .alt .pull em{color:var(--gold)}
+  /* Mapa con consentimiento */
+  .map-wrap{position:relative;margin-top:44px}
+  .map-wrap .map-embed{margin-top:0}
+  .map-consent{position:absolute;inset:0;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;background:rgba(13,24,38,.94);color:var(--cream);border:1px dashed rgba(255,255,255,.22)}
+  .map-consent p{max-width:380px;font-weight:300;color:rgba(248,242,232,.85);font-size:.95rem}
+  .map-wrap.ok .map-consent{display:none}
+  /* Banner de cookies */
+  .cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:120;display:none;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    background:rgba(13,24,38,.97);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 20px;box-shadow:0 16px 40px -12px rgba(0,0,0,.5);max-width:1180px;margin:0 auto}
+  .cookie-banner.show{display:flex}
+  .cookie-banner p{color:rgba(248,242,232,.86);font-size:.88rem;font-weight:300;flex:1;min-width:240px}
+  .cookie-banner a{color:var(--gold);text-decoration:underline;cursor:pointer}
+  .cookie-btns{display:flex;gap:10px}
+  .ck-btn{font-family:var(--sans);font-weight:600;font-size:.85rem;padding:10px 20px;border-radius:40px;cursor:pointer;border:1px solid var(--gold);background:var(--gold);color:var(--espresso);transition:.3s}
+  .ck-btn.ck-ghost{background:transparent;color:var(--cream)}
+  .ck-btn:hover{opacity:.88}
+  /* Texto legal */
+  .legal{max-width:780px}
+  .legal h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;margin:30px 0 8px}
+  .legal p,.legal li{color:var(--ink-soft);font-weight:300;font-size:.98rem;margin-bottom:10px;line-height:1.75}
+  .legal ul{padding-left:22px}
+  .legal .pending{color:var(--caoba);font-style:italic}
+  /* Enlaces legales del footer */
+  .legal-links{margin-top:20px;display:flex;gap:8px 18px;justify-content:center;flex-wrap:wrap}
+  .legal-links a{color:rgba(248,242,232,.7);font-size:.78rem;letter-spacing:.04em;cursor:pointer}
+  .legal-links a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -288,6 +335,7 @@
   </a>
   <div class="links" id="links">
     <a href="#inicio" data-view="inicio">Inicio</a>
+    <a href="#cafe" data-view="cafe">Café</a>
     <a href="#carta" data-view="carta">Carta</a>
     <a href="#galeria" data-view="galeria">Galería</a>
     <a href="#resenas" data-view="resenas">Reseñas</a>
@@ -322,9 +370,9 @@
       <img class="logo-badge" src="assets/logo-luma-black.png" alt="Luma Specialty Coffee" height="52">
       <div class="sec-head" style="margin-bottom:28px">
         <span class="eyebrow">La casa</span>
-        <h2>El café, <em>como debe ser</em></h2>
+        <h2>Aquí el café <em>importa</em></h2>
       </div>
-      <p>Luma nace en 2026 como la <em>primera cafetería de café de especialidad de Teruel</em>, con una idea sencilla: aquí el café importa. Tratamos el café como lo que es, un producto de origen que merece tiempo y oficio. Grano de especialidad, extracción cuidada y una taza pensada para disfrutar sin prisa.</p>
+      <p>Luma nace en 2026 como la <em>primera cafetería de café de especialidad de Teruel</em>. Tratamos el café como lo que es, un producto de origen que merece tiempo y oficio: grano de especialidad, extracción cuidada y una taza pensada para disfrutar sin prisa.</p>
       <p>Acompañamos cada café con repostería propia, opciones de brunch y leches alternativas —avena, coco, almendra— para que cada visita se sienta a medida. Un rincón luminoso en la carretera de Alcañiz para empezar el día o hacer una pausa.</p>
       <p class="sign">— Luma Specialty Coffee, Teruel</p>
     </div>
@@ -337,6 +385,108 @@
   </div>
 </section>
 </section><!-- /view-inicio -->
+
+<section class="view" id="view-cafe">
+<!-- CAFÉ DE ESPECIALIDAD -->
+<section class="pad" id="cafe">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">El café</span>
+      <h2>Por qué <em>café de especialidad</em></h2>
+      <p>No es una etiqueta de moda: es una forma de entender el café desde la finca hasta tu taza. Esto es lo que lo hace diferente.</p>
+    </div>
+    <div class="esp-grid">
+      <div class="esp reveal" data-d="1">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+        <h3>¿Qué es?</h3><p>Café puntuado por encima de 80 sobre 100 según la SCA. Trazable —conocemos finca, variedad y altitud— y tostado fresco para sacar lo mejor del grano.</p>
+      </div>
+      <div class="esp reveal" data-d="2">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+        <h3>Espresso o filtrado</h3><p>El espresso concentra cuerpo e intensidad; los métodos de filtrado (V60, Aeropress, prensa francesa, batch brew) dan una taza más limpia y aromática que resalta los matices.</p>
+      </div>
+      <div class="esp reveal" data-d="3">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-5 6-5 9a5 5 0 0 0 10 0c0-3-2-5-5-9z"/></svg>
+        <h3>El proceso importa</h3><p>Lavado (limpio y brillante), natural (afrutado y dulce) u honey (equilibrado): cómo se trata el grano tras la cosecha cambia por completo el sabor de la taza.</p>
+      </div>
+      <div class="esp reveal" data-d="4">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 3 15 0 18M3 12c3-3 15-3 18 0"/></svg>
+        <h3>Matices según origen</h3><p>Notas florales y cítricas en cafés de África, cacao y frutos secos en Brasil, caramelo y fruta roja en Colombia. Cada origen cuenta algo distinto.</p>
+      </div>
+    </div>
+
+    <p class="pull reveal">Nada <em>importante</em> se elige <em>con prisa</em>.</p>
+
+    <div class="sec-head reveal" style="margin-top:80px">
+      <span class="eyebrow">Nuestro café</span>
+      <h2>Tostado por <em>Rebeldes Coffee</em></h2>
+      <p>En Luma trabajamos con café de <strong>Rebeldes Coffee</strong>, tostador artesano de especialidad de Valencia. Además de tomarlo aquí, puedes llevarte grano a casa.</p>
+    </div>
+    <div class="coffee-grid">
+      <article class="coffee-card reveal" data-d="1">
+        <div class="coffee-img"><img src="img/reb-1.jpg" alt="Café CAUCA XP de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>CAUCA XP</h4><p>Nuestro único blend: 50% lavado y 50% honey, directamente desde Colombia.</p><span class="cc-price">14,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="2">
+        <div class="coffee-img"><img src="img/reb-2.jpg" alt="Café SIMCA 1000 de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>SIMCA 1000</h4><p>Chocolate, almendra y arándano en un descafeinado procesado con Swiss Water , que preserva toda…</p><span class="cc-price">14,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="3">
+        <div class="coffee-img"><img src="img/reb-3.jpg" alt="Café CAUCA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>CAUCA</h4><p>Nuestro gran clásico.</p><span class="cc-price">14,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="4">
+        <div class="coffee-img"><img src="img/reb-4.jpg" alt="Café ANNA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>ANNA</h4><p>Desde Nicaragua, finca Montesol.</p><span class="cc-price">15,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="1">
+        <div class="coffee-img"><img src="img/reb-5.jpg" alt="Café SABA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>SABA</h4><p>Etiopía en estado puro: chocolate con leche, jazmín y té negro.</p><span class="cc-price">14,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="2">
+        <div class="coffee-img"><img src="img/reb-6.jpg" alt="Café PACAMARA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>PACAMARA</h4><p>El “grano elefante” de Centroamérica, originario Nicaragua.</p><span class="cc-price">15,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="3">
+        <div class="coffee-img"><img src="img/reb-7.jpg" alt="Café USUL de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>USUL</h4><p>Bourbon rosado honey.</p><span class="cc-price">14,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="4">
+        <div class="coffee-img"><img src="img/reb-8.jpg" alt="Café KALPANA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>KALPANA</h4><p>Un catuaí poco habitual en India.</p><span class="cc-price">17,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="1">
+        <div class="coffee-img"><img src="img/reb-9.jpg" alt="Café SHAKTI de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>SHAKTI</h4><p>Un café que nos viene directamente desde la India, con una fermentación muy suave que le da not…</p><span class="cc-price">17,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="2">
+        <div class="coffee-img"><img src="img/reb-10.jpg" alt="Café WANGARI de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>WANGARI</h4><p>La sabana keniana en tu taza.</p><span class="cc-price">15,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="3">
+        <div class="coffee-img"><img src="img/reb-11.jpg" alt="Café KIBERA de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>KIBERA</h4><p>Un café limpio, dulce y muy equilibrado.</p><span class="cc-price">14,50 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="4">
+        <div class="coffee-img"><img src="img/reb-12.jpg" alt="Café EL BUEYERITO de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>EL BUEYERITO</h4><p>El Bueyerito está de vuelta.</p><span class="cc-price">14,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="1">
+        <div class="coffee-img"><img src="img/reb-13.jpg" alt="Café ALTAIR de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>ALTAIR</h4><p>U n café vibrante y expresivo que combina dulzor, frescura y complejidad con gran equilibrio.</p><span class="cc-price">16,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="2">
+        <div class="coffee-img"><img src="img/reb-14.jpg" alt="Café Adichie de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>Adichie</h4><p>Inspirado en Chimamanda Ngozi Adichie, este café ruandés habla con claridad y carácter propio.</p><span class="cc-price">16,00 €</span></div>
+      </article>
+      <article class="coffee-card reveal" data-d="3">
+        <div class="coffee-img"><img src="img/reb-15.jpg" alt="Café Vivienne de Rebeldes Coffee" loading="lazy"></div>
+        <div class="cc-body"><h4>Vivienne</h4><p>Un natural costarricense sedoso y expresivo donde el caramelo aporta dulzura envolvente, los fr…</p><span class="cc-price">16,00 €</span></div>
+      </article>
+    </div>
+    <p class="carta-note reveal">Cafés de Rebeldes Coffee a la venta en Luma. Precio = tarifa de Rebeldes + 1,50 €. Precios y disponibilidad <strong>pendientes de confirmar</strong> con la cafetería.</p>
+  </div>
+</section>
+</section><!-- /view-cafe -->
 
 <section class="view" id="view-carta">
 <!-- CARTA / OFERTA -->
@@ -599,6 +749,7 @@
       <h2>Lo que dicen <em>en Google</em></h2>
       <p>Opiniones reales de clientes de Luma Specialty Coffee en Google.</p>
     </div>
+    <p class="pull reveal">«Esto es justo <em>lo que necesitaba</em>.»</p>
     <div class="rev-grid">
       <div class="rev reveal"><div class="stars">★★★★★</div><p>“El lugar de referencia en Teruel si quieres disfrutar de un buen café y de un local acogedor donde se ‘detiene’ el tiempo, para aprovechar en buena compañía.”</p><div class="who"><b>Juan Muñoz</b> · Google</div></div>
       <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>“Lugar con encanto, perfecto para tomarte un buen café y un delicioso dulce hecho artesanalmente. Un espacio tranquilo y muy bien decorado.”</p><div class="who"><b>Cristina Ponce</b> · Google</div></div>
@@ -643,9 +794,98 @@
         <p style="margin-top:16px;color:rgba(248,242,232,.6);font-size:.8rem">Horario de Google Maps (jun. 2026). Te lo confirmamos en el local.</p>
       </div>
     </div>
+
+    <div class="map-wrap reveal" id="mapWrap">
+      <iframe class="map-embed" id="mapFrame" data-src="https://www.google.com/maps?q=Luma%20Specialty%20Coffee%2C%20Ctra.%20de%20Alca%C3%B1iz%2039%2C%2044003%20Teruel&z=16&hl=es&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Luma Specialty Coffee en Teruel"></iframe>
+      <div class="map-consent" id="mapConsent">
+        <p>Para mostrar el mapa de Google necesitamos tu consentimiento de cookies de terceros.</p>
+        <button class="hero__cta" id="mapAccept" type="button">Aceptar y ver el mapa</button>
+      </div>
+    </div>
+
+    <div class="getting-there reveal">
+      <div class="gt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M9 21l2-5 1-3 3 2 2 4"/><path d="M7 12l2-4 3-1 3 3"/></svg>
+        <div><h4>A pie</h4><p>A unos 10–12 min andando desde la Plaza del Torico, por el centro de Teruel.</p></div>
+      </div>
+      <div class="gt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13"/><path d="M5 13h14v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="15.5" r=".6"/><circle cx="16.5" cy="15.5" r=".6"/></svg>
+        <div><h4>En coche</h4><p>A unos 3–4 min del centro; zona con aparcamiento en la carretera de Alcañiz.</p></div>
+      </div>
+      <div class="gt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="12" rx="2"/><path d="M5 10h14"/><path d="M7 16v2M17 16v2"/><circle cx="8.5" cy="13.5" r=".6"/><circle cx="15.5" cy="13.5" r=".6"/></svg>
+        <div><h4>Autobús urbano</h4><p>Línea A (Ensanche · Centro · Carretera de Alcañiz), con parada muy cerca.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 </section><!-- /view-como-llegar -->
+
+<section class="view" id="view-legal">
+<section class="pad">
+  <div class="wrap legal">
+    <div class="sec-head reveal"><span class="eyebrow">Legal</span><h2>Aviso legal</h2></div>
+    <div class="reveal">
+      <h3>Titularidad del sitio</h3>
+      <p>En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:</p>
+      <ul>
+        <li>Titular: <span class="pending">[Razón social / nombre del titular — pendiente]</span></li>
+        <li>NIF/CIF: <span class="pending">[pendiente]</span></li>
+        <li>Domicilio: Ctra. de Alcañiz, 39, Local 2, 44003 Teruel</li>
+        <li>Contacto: <a href="https://www.instagram.com/cafelumaespecialidad" target="_blank" rel="noopener">@cafelumaespecialidad</a> · teléfono <span class="pending">[pendiente]</span></li>
+      </ul>
+      <h3>Objeto</h3>
+      <p>Este sitio tiene carácter informativo sobre la cafetería Luma Specialty Coffee. El acceso y uso del sitio implica la aceptación de las presentes condiciones.</p>
+      <h3>Propiedad intelectual</h3>
+      <p>La marca, el logotipo, los textos y las imágenes propias pertenecen a su titular. Las tipografías y materiales de marca se utilizan bajo la licencia correspondiente del negocio. No está permitida su reproducción sin autorización.</p>
+      <h3>Responsabilidad</h3>
+      <p>El titular no se hace responsable de los errores u omisiones que pudiera contener el sitio. La información (carta, precios y horarios) puede variar; se confirma en el local.</p>
+      <h3>Legislación aplicable</h3>
+      <p>Las presentes condiciones se rigen por la legislación española.</p>
+      <p class="pending">Aviso legal de demostración. Datos del titular pendientes de cumplimentar antes de publicar.</p>
+    </div>
+  </div>
+</section>
+</section><!-- /view-legal -->
+
+<section class="view" id="view-privacidad">
+<section class="pad">
+  <div class="wrap legal">
+    <div class="sec-head reveal"><span class="eyebrow">Legal</span><h2>Política de privacidad</h2></div>
+    <div class="reveal">
+      <h3>Responsable del tratamiento</h3>
+      <p>Responsable: <span class="pending">[Titular — pendiente]</span>, con domicilio en Ctra. de Alcañiz, 39, Local 2, 44003 Teruel. De acuerdo con el RGPD (UE 2016/679) y la LOPDGDD 3/2018.</p>
+      <h3>Datos que tratamos</h3>
+      <p>Este sitio es informativo y <strong>no dispone de formularios</strong> que recojan datos personales. La comunicación con el negocio se realiza por teléfono o a través de Instagram, fuera de este sitio. Únicamente se tratan datos técnicos de navegación (ver Política de cookies).</p>
+      <h3>Finalidad y legitimación</h3>
+      <p>Los datos técnicos se utilizan para el correcto funcionamiento del sitio, sobre la base del interés legítimo y, para las cookies no esenciales, de tu consentimiento.</p>
+      <h3>Tus derechos</h3>
+      <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo al responsable. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>
+      <p class="pending">Política de demostración. Datos del responsable pendientes de cumplimentar antes de publicar.</p>
+    </div>
+  </div>
+</section>
+</section><!-- /view-privacidad -->
+
+<section class="view" id="view-cookies">
+<section class="pad">
+  <div class="wrap legal">
+    <div class="sec-head reveal"><span class="eyebrow">Legal</span><h2>Política de cookies</h2></div>
+    <div class="reveal">
+      <h3>¿Qué son las cookies?</h3>
+      <p>Son pequeños archivos que se almacenan en tu dispositivo al navegar. Sirven para que el sitio funcione y para recordar tus preferencias.</p>
+      <h3>Cookies que utilizamos</h3>
+      <ul>
+        <li><strong>Técnicas (propias):</strong> recuerdan tu elección sobre cookies. Son necesarias y no requieren consentimiento.</li>
+        <li><strong>De terceros — Google Maps:</strong> el mapa de la sección «Visítanos» es un servicio de Google que puede instalar cookies. Solo se carga <strong>si aceptas</strong>; mientras tanto se muestra un aviso en su lugar.</li>
+      </ul>
+      <h3>Gestión</h3>
+      <p>Puedes aceptar o rechazar las cookies no esenciales en el aviso inferior, y borrarlas o bloquearlas desde la configuración de tu navegador en cualquier momento.</p>
+      <p><a id="ckReset" class="map-link" style="cursor:pointer">Volver a mostrar el aviso de cookies →</a></p>
+    </div>
+  </div>
+</section>
+</section><!-- /view-cookies -->
 </main>
 
 <footer>
@@ -656,6 +896,11 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 3.5A6.3 6.3 0 1 0 18.3 12 6.3 6.3 0 0 0 12 5.7zm0 10.4A4.1 4.1 0 1 1 16.1 12 4.1 4.1 0 0 1 12 16.1zm6.5-10.6a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5z"/></svg>
       @cafelumaespecialidad
     </a>
+    <div class="legal-links">
+      <a href="#legal" data-view="legal">Aviso legal</a>
+      <a href="#privacidad" data-view="privacidad">Política de privacidad</a>
+      <a href="#cookies" data-view="cookies">Política de cookies</a>
+    </div>
     <small>
       Ctra. de Alcañiz, 39 · Local 2 · 44003 Teruel<br>
       <span class="placeholder-note">Web de demostración · Vídeo de portada proporcionado por el negocio; fotos e información de Google Maps (jun. 2026). Teléfono y datos legales (NIF/titular) pendientes de confirmar.</span>
@@ -669,6 +914,14 @@
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
   <span>Cómo llegar</span>
 </a>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies propias (técnicas) y de terceros (Google Maps) para mejorar tu experiencia. Puedes aceptarlas o rechazarlas. <a data-view="cookies" href="#cookies">Más información</a>.</p>
+  <div class="cookie-btns">
+    <button class="ck-btn ck-ghost" id="ckReject" type="button">Rechazar</button>
+    <button class="ck-btn" id="ckAccept" type="button">Aceptar</button>
+  </div>
+</div>
 
 <script>
   const nav=document.getElementById('nav'),links=document.getElementById('links');
@@ -738,6 +991,23 @@
     el.querySelector('.txt').innerHTML=next?('<b>Cerrado</b> · abre '+(next.dia==='hoy'?'':next.dia+' ')+'a las '+next.hora):'<b>Cerrado</b>';
   }
   updateStatus();setInterval(updateStatus,60000);
+
+  // ---------- Cookies + mapa con consentimiento ----------
+  (function(){
+    const KEY='luma_cookies';
+    const banner=document.getElementById('cookieBanner');
+    const mapWrap=document.getElementById('mapWrap');
+    const mapFrame=document.getElementById('mapFrame');
+    function loadMap(){ if(mapFrame && !mapFrame.src){mapFrame.src=mapFrame.dataset.src;} if(mapWrap)mapWrap.classList.add('ok'); }
+    function setChoice(v){ try{localStorage.setItem(KEY,v);}catch(e){} if(banner)banner.classList.remove('show'); if(v==='accept')loadMap(); }
+    let choice=null; try{choice=localStorage.getItem(KEY);}catch(e){}
+    if(choice==='accept'){loadMap();}
+    else if(!choice && banner){banner.classList.add('show');}
+    document.getElementById('ckAccept')?.addEventListener('click',()=>setChoice('accept'));
+    document.getElementById('ckReject')?.addEventListener('click',()=>setChoice('reject'));
+    document.getElementById('mapAccept')?.addEventListener('click',()=>setChoice('accept'));
+    document.getElementById('ckReset')?.addEventListener('click',()=>{ if(banner)banner.classList.add('show'); });
+  })();
 </script>
 </body>
 </html>
