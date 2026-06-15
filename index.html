@@ -337,6 +337,40 @@
   .legal-links{margin-top:20px;display:flex;gap:8px 18px;justify-content:center;flex-wrap:wrap}
   .legal-links a{color:rgba(248,242,232,.7);font-size:.78rem;letter-spacing:.04em;cursor:pointer}
   .legal-links a:hover{color:var(--gold)}
+
+  /* ---------- AJUSTES MÓVIL ---------- */
+  @media(max-width:600px){
+    .pad{padding:clamp(54px,9vh,90px) 0}
+    .wrap{padding:0 18px}
+    .sec-head{margin-bottom:38px}
+    .sec-head p{font-size:1rem}
+    nav{padding:16px 20px}
+    nav.scrolled{padding:11px 20px}
+    .hero__content .lead{font-size:1rem;margin:20px auto 26px}
+    .hero__content .eyebrow{margin-bottom:20px;letter-spacing:.28em}
+    .hero__actions{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin-inline:auto}
+    .hero__actions .hero__cta{justify-content:center}
+    .stats{gap:12px}
+    .stat{padding:22px 14px}
+    .esp{padding:26px 22px}
+    .esp h3{font-size:1.3rem}
+    .esp-grid{gap:16px}
+    .pull{margin:42px auto;font-size:clamp(1.45rem,6.5vw,2rem)}
+    .coffee-grid{gap:14px}
+    .rev-grid{gap:14px}
+    .rev{padding:22px}
+    .map-embed{height:300px}
+    .menu{gap:22px}
+    .info-row{flex-direction:column;gap:4px}
+    .info-row .k{min-width:0}
+    .hours li{flex-direction:column;align-items:flex-start;gap:2px;padding:12px 18px}
+    .hours li .h{font-size:.86rem}
+    .getting-there{grid-template-columns:1fr}
+  }
+  @media(max-width:400px){
+    .gal{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -510,25 +544,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Lo que servimos</span>
       <h2>Empieza por el café. <em>Luego ya vemos.</em></h2>
-      <p>Café de especialidad, repostería propia y brunch. Esta es la carta de Luma, con precios reales.</p>
-    </div>
-    <div class="esp-grid">
-      <div class="esp reveal" data-d="1">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        <h3>Café de especialidad</h3><p>Espresso, filtrado y bebidas con leche, extraídos al momento a partir de grano de origen seleccionado.</p>
-      </div>
-      <div class="esp reveal" data-d="2">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v2a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7Z"/><path d="M7 11V7a2 2 0 0 1 2-2"/><path d="M12 11V6a2 2 0 0 1 2-2"/></svg>
-        <h3>Repostería propia</h3><p>Bizcochos, tartas y dulces elaborados en casa, pensados para acompañar la taza.</p>
-      </div>
-      <div class="esp reveal" data-d="3">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        <h3>Brunch</h3><p>Propuestas de brunch para empezar el día sin prisa, con producto cuidado.</p>
-      </div>
-      <div class="esp reveal" data-d="4">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M9 2v3l-2 4v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9l-2-4V2"/><path d="M7 13h10"/></svg>
-        <h3>Leches alternativas</h3><p>Avena, coco y almendra, además de la opción clásica, para personalizar cada bebida.</p>
-      </div>
+      <p>Café de especialidad, repostería propia y brunch.</p>
     </div>
     <div class="carta-tabs reveal" role="tablist">
       <button class="ctab is-active" data-tab="cafe">Cafés</button>
@@ -750,6 +766,9 @@
       <button class="ctab" data-filter="brunch">Brunch y dulce</button>
     </div>
     <div class="gal">
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-10.jpg" alt="Bagels, cinnamon roll y matcha latte en Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-13.jpg" alt="Bagels, brownie y cafés con leche en Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-16.jpg" alt="Babka de chocolate con café de especialidad en Luma" loading="lazy"></figure>
       <figure class="reveal" data-cat="bebidas"><img src="img/gal-01.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
       <figure class="reveal" data-cat="bebidas"><img src="img/gal-02.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
       <figure class="reveal" data-cat="bebidas"><img src="img/gal-03.jpg" alt="Foto de café y bebidas de Luma" loading="lazy"></figure>
@@ -776,6 +795,11 @@
       <figure class="reveal" data-cat="local"><img src="img/gal-24.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
       <figure class="reveal" data-cat="local"><img src="img/gal-25.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
       <figure class="reveal" data-cat="local"><img src="img/gal-26.jpg" alt="Foto de el local de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-17.jpg" alt="Brunch en Luma: tarta de queso, focaccia y café con latte art" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-09.jpg" alt="Tarta de queso de chocolate de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="brunch"><img src="img/gmaps-02.jpg" alt="Vitrina de bollería y repostería propia de Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gmaps-15.jpg" alt="Dos cafés con leche con latte art en Luma" loading="lazy"></figure>
+      <figure class="reveal" data-cat="bebidas"><img src="img/gmaps-06.jpg" alt="Cortado en taza de cerámica en Luma" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -792,12 +816,12 @@
     </div>
     <p class="pull reveal">«Esto es justo <em>lo que necesitaba</em>.»</p>
     <div class="rev-grid">
-      <div class="rev reveal"><div class="stars">★★★★★</div><p>“El lugar de referencia en Teruel si quieres disfrutar de un buen café y de un local acogedor donde se ‘detiene’ el tiempo, para aprovechar en buena compañía.”</p><div class="who"><b>Juan Muñoz</b> · Google</div></div>
-      <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>“Lugar con encanto, perfecto para tomarte un buen café y un delicioso dulce hecho artesanalmente. Un espacio tranquilo y muy bien decorado.”</p><div class="who"><b>Cristina Ponce</b> · Google</div></div>
-      <div class="rev reveal" data-d="2"><div class="stars">★★★★★</div><p>“Hermoso lugar atendido por sus dueños, se nota que saben lo que hacen. Café excelente y pastelería muy rica. Ambiente espacioso y cómodo.”</p><div class="who"><b>Nazareno Gregorio</b> · Google</div></div>
-      <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>“Muy buen sitio con muy buen café. El establecimiento es muy acogedor y la atención también muy buena. ¡Teruel necesitaba una cafetería así!”</p><div class="who"><b>Vega Hernández</b> · Google</div></div>
-      <div class="rev reveal" data-d="2"><div class="stars">★★★★★</div><p>“Un sitio con mucho encanto. El café riquísimo, el trato del personal inmejorable y el local tiene un diseño precioso. ¡Las tostadas y los dulces están de 10!”</p><div class="who"><b>Belén Gómez Civera</b> · Google</div></div>
-      <div class="rev reveal" data-d="3"><div class="stars">★★★★★</div><p>“Un sitio genial tanto para desayunar como para tomar algo a cualquier hora. Buen ambiente, servicio muy amable y todo lo que probamos estaba delicioso.”</p><div class="who"><b>Erika Izquierdo</b> · Google</div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>“El lugar de referencia en Teruel si quieres disfrutar de un buen café y de un local acogedor donde se ‘detiene’ el tiempo, para aprovechar en buena compañía.”</p><div class="who"><b>Juan M.</b> · Google</div></div>
+      <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>“Lugar con encanto, perfecto para tomarte un buen café y un delicioso dulce hecho artesanalmente. Un espacio tranquilo y muy bien decorado.”</p><div class="who"><b>Cristina P.</b> · Google</div></div>
+      <div class="rev reveal" data-d="2"><div class="stars">★★★★★</div><p>“Hermoso lugar atendido por sus dueños, se nota que saben lo que hacen. Café excelente y pastelería muy rica. Ambiente espacioso y cómodo.”</p><div class="who"><b>Nazareno G.</b> · Google</div></div>
+      <div class="rev reveal" data-d="1"><div class="stars">★★★★★</div><p>“Muy buen sitio con muy buen café. El establecimiento es muy acogedor y la atención también muy buena. ¡Teruel necesitaba una cafetería así!”</p><div class="who"><b>Vega H.</b> · Google</div></div>
+      <div class="rev reveal" data-d="2"><div class="stars">★★★★★</div><p>“Un sitio con mucho encanto. El café riquísimo, el trato del personal inmejorable y el local tiene un diseño precioso. ¡Las tostadas y los dulces están de 10!”</p><div class="who"><b>Belén G.</b> · Google</div></div>
+      <div class="rev reveal" data-d="3"><div class="stars">★★★★★</div><p>“Un sitio genial tanto para desayunar como para tomar algo a cualquier hora. Buen ambiente, servicio muy amable y todo lo que probamos estaba delicioso.”</p><div class="who"><b>Erika I.</b> · Google</div></div>
     </div>
     <div class="rev-cta reveal">
       <a class="hero__cta" href="https://www.google.com/maps?cid=5026254217699155391" target="_blank" rel="noopener">Ver todas las reseñas en Google</a>
