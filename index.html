@@ -380,6 +380,10 @@
   @media(max-width:400px){
     .stats{grid-template-columns:1fr}
   }
+  .contact-grid{align-items:start}
+  .contact-grid .map-wrap{margin-top:0}
+  .contact-grid .map-wrap .map-embed{height:100%;min-height:360px}
+  .hours-wrap{margin-top:32px;max-width:620px}
 </style>
 </head>
 <body>
@@ -856,7 +860,18 @@
         <a class="map-link" href="https://www.google.com/maps?cid=5026254217699155391" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Cómo llegar en Google Maps →</a>
       </div>
       <div class="reveal" data-d="1">
-        <ul class="hours" id="hours">
+        <div class="map-wrap reveal" id="mapWrap">
+      <iframe class="map-embed" id="mapFrame" data-src="https://www.google.com/maps?q=Luma%20Specialty%20Coffee%2C%20Ctra.%20de%20Alca%C3%B1iz%2039%2C%2044003%20Teruel&z=16&hl=es&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Luma Specialty Coffee en Teruel"></iframe>
+      <div class="map-consent" id="mapConsent">
+        <p>Para mostrar el mapa de Google necesitamos tu consentimiento de cookies de terceros.</p>
+        <button class="hero__cta" id="mapAccept" type="button">Aceptar y ver el mapa</button>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div class="hours-wrap reveal">
+      <ul class="hours" id="hours">
           <li data-day="1"><span class="d">Lunes</span><span class="h">Cerrado</span></li>
           <li data-day="2"><span class="d">Martes</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
           <li data-day="3"><span class="d">Miércoles</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
@@ -865,15 +880,6 @@
           <li data-day="6"><span class="d">Sábado</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
           <li data-day="0"><span class="d">Domingo</span><span class="h">09:00–14:00 · 16:00–20:00</span></li>
         </ul>
-      </div>
-    </div>
-
-    <div class="map-wrap reveal" id="mapWrap">
-      <iframe class="map-embed" id="mapFrame" data-src="https://www.google.com/maps?q=Luma%20Specialty%20Coffee%2C%20Ctra.%20de%20Alca%C3%B1iz%2039%2C%2044003%20Teruel&z=16&hl=es&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Luma Specialty Coffee en Teruel"></iframe>
-      <div class="map-consent" id="mapConsent">
-        <p>Para mostrar el mapa de Google necesitamos tu consentimiento de cookies de terceros.</p>
-        <button class="hero__cta" id="mapAccept" type="button">Aceptar y ver el mapa</button>
-      </div>
     </div>
 
     <div class="getting-there reveal">
